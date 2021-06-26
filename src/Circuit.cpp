@@ -7,6 +7,7 @@
 #include "Circuit.hpp"
 #include "utils.hpp"
 
+namespace qs {
 Circuit::Circuit(size_t size) : size(size) {
   this->amps = af::complex(af::constant(0, (dim_t)pow(2, size)));
   this->amps(0) = 1;
@@ -84,3 +85,4 @@ unsigned long Circuit::measure(size_t start, size_t n) {
 
   return res;
 }
+} // namespace qs

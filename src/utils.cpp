@@ -1,6 +1,7 @@
 #include <arrayfire.h>
 
-af::array kron(af::array &lhs, af::array &rhs) {
+__attribute__((visibility("hidden"))) af::array kron(af::array &lhs,
+                                                     af::array &rhs) {
   // This isn't very readable, but it implements the kronecker product with GPU
   // acceleration
   af::array arr = af::tile(lhs, rhs.dims(1));

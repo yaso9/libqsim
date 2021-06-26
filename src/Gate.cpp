@@ -3,6 +3,7 @@
 
 #include "Gate.hpp"
 
+namespace qs {
 Gate::Gate(size_t size, af::array mat) : size(size), mat(mat) {
   // Assert mat is unitary
 
@@ -21,3 +22,4 @@ Gate::Gate(size_t size, af::array mat) : size(size), mat(mat) {
   assert(af::allTrue<bool>(af::abs(af::imag(should_be_ident)) <
                            std::numeric_limits<float>::epsilon() * 10));
 }
+} // namespace qs

@@ -4,16 +4,18 @@
 
 #include "Gate.hpp"
 
+namespace qs {
 class Circuit {
 public:
-    const size_t size;
-    af::array amps;
+  const size_t size;
+  af::array amps;
 
-    Circuit(size_t size);
+  Circuit(size_t size);
 
-    void apply(Gate gate, size_t qubit);
+  void apply(Gate gate, size_t qubit);
 
-    af::array probs() const;
+  af::array probs() const;
 
-    unsigned long measure(size_t start = 0, size_t n = 0);
+  unsigned long measure(size_t start = 0, size_t n = 0);
 };
+} // namespace qs

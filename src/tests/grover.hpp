@@ -8,18 +8,18 @@ TEST(Grover, TwoQubit) {
     qs::Circuit circuit(2);
     circuit.apply(qs::Gates::H, 0);
     circuit.apply(qs::Gates::H, 1);
-    circuit.apply(qs::Gates::H, 0);
+    circuit.apply(qs::Gates::H, 1);
     circuit.apply(qs::Gates::CNOT, 0);
-    circuit.apply(qs::Gates::H, 0);
+    circuit.apply(qs::Gates::H, 1);
     circuit.apply(qs::Gates::H, 0);
     circuit.apply(qs::Gates::H, 1);
     circuit.apply(qs::Gates::Z, 0);
     circuit.apply(qs::Gates::Z, 1);
-    circuit.apply(qs::Gates::H, 0);
+    circuit.apply(qs::Gates::H, 1);
     circuit.apply(qs::Gates::CNOT, 0);
-    circuit.apply(qs::Gates::H, 0);
+    circuit.apply(qs::Gates::H, 1);
     circuit.apply(qs::Gates::H, 0);
     circuit.apply(qs::Gates::H, 1);
-    EXPECT_EQ(circuit.measure(), 3);
+    EXPECT_EQ(circuit.measure(), 0b11);
   }
 }

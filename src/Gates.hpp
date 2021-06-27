@@ -15,6 +15,7 @@ const float Z_mat[] = {1, 0, 0, -1};
 const float CNOT_mat[] = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0};
 } // namespace
 
+const Gate I = Gate(1, af::complex(af::identity(2, 2)));
 const Gate H = Gate(1, af::complex(af::array(2, 2, H_mat)));
 const Gate X = Gate(1, af::complex(af::array(2, 2, X_mat)));
 const Gate Y = Gate(

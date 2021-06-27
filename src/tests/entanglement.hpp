@@ -5,7 +5,7 @@ TEST(Entanglement, TwoQubit) {
     std::srand(i);
 
     qs::Circuit circuit(2);
-    circuit.apply(qs::Gates::H, 1);
+    circuit.apply(qs::Gates::H, 0);
     circuit.apply(qs::Gates::CNOT, 0);
     unsigned long res = circuit.measure();
     EXPECT_EQ(res & 0b1, (res & 0b10) >> 1);
@@ -17,9 +17,9 @@ TEST(Entanglement, ThreeQubit) {
     std::srand(i);
 
     qs::Circuit circuit(3);
-    circuit.apply(qs::Gates::H, 2);
-    circuit.apply(qs::Gates::CNOT, 1);
+    circuit.apply(qs::Gates::H, 0);
     circuit.apply(qs::Gates::CNOT, 0);
+    circuit.apply(qs::Gates::CNOT, 1);
     unsigned long res = circuit.measure();
     EXPECT_EQ(res & 0b1, (res & 0b10) >> 1);
     EXPECT_EQ(res & 0b1, (res & 0b100) >> 2);
